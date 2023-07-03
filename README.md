@@ -16,7 +16,8 @@ Predicted by similarity techniques by analyzing similar keywords:
 
 
 5.Creating feature Matrix for model training:
-![image](https://github.com/visin109/doceree-hackathon/assets/74146605/976d9030-ebc6-4cc7-bd08-d060f11f4831)
+![image](https://github.com/visin109/doceree-hackathon/assets/74146605/b87cecd5-a3c9-415d-93f8-b05cf912a9d9)
+
 
 Model Results :
 1.Validation data result
