@@ -1,0 +1,50 @@
+Approach:
+1.Data Preprocessing: The ad server logs need to be preprocessed before building the model.Checked unique values,null percentage, 
+Handled missing values,removed duplicates
+
+2. EDA(Exploratory Data Analysis):
+Exploratory Data Analysis (EDA) is performed for your problem statement to gain insights 
+and understand the dataset. It helps in cleaning and preprocessing the data, selecting relevant features, 
+identifying relationships between variables wrt to target varaibles(hcp or not), 
+visualizing data patterns etc,EDA provides a foundation for further analysis and decision-making, 
+ensuring data quality and aiding in addressing the problem statement effectively.
+
+2.Feature Selection: Relevant features need to be selected or engineered from the ad server logs to 
+capture important information related to HCP classification and specialization. We also removed unnecessary columns here.
+This may involve extracting information from the user agent, URL, keywords, or other fields that could be indicative of an HCP's behavior or specialization.
+
+3.Feature Engineering: In the feature engineering step, several techniques were applied to process and 
+encode the features in the dataset. Specifically, the "KEYWORDS" column was converted into numerical vector representations using a word2vec model. 
+This allowed capturing the semantic meaning and similarity between different medical keywords.
+Additionally, other important features were encoded using various methods such as one-hot encoding , label encoding, and count encoding. 
+One-hot encoding is used to represent categorical variables as binary vectors, label encoding assigns a unique numerical label to each category, 
+and count encoding represents each category with the count of its occurrences(used for URL’s).
+
+4.Model Training: Various machine learning algorithms can be employed to train a classification model on the preprocessed data. 
+This included algorithms such as logistic regression, decision trees, random forests, gradient boosting, or deep learning approaches. 
+Model Used:Random Forest Regression
+Accuracy on validation:94
+For this we used Random forest classifier because Random Forest has the ability to capture complex feature interactions and non-linear relationships between features. 
+In the case of given dataset of categorical variables, RF can automatically learn and consider interactions 
+between different categories within a feature especially with lots of medical terms which can be critically used to identify taxonomy and hcp’s.
+
+5. Model validation: Divided feature_matrix into train and validation datsset(75:25).
+As target variable is not present in test dataset we can assess the performance of model. So we used validation dataset to tune our model to achieve better accuracy
+and validated it using kflod cross validation method.Evaluated using appropriate metrics such 
+as accuracy, precision, recall, and F1 score to assess its performance in classifying users as HCPs and predicting their specializations.
+
+6.Filling Taxonomies:
+Created a taxonomy map with entire keyword and taxonomy and keyword taxonomy map with each medical term with its list of associated taxonomies.
+For predicted hcp who are hcp are first compared with taxonomy_dict and corresponding taxonomies are filled.
+For Keywords that don’t match, the cosine similarity between the keyword vector of each row in the 
+dataframe and the keyword vectors in the keyword_vector1 dictionary. 
+It finds the top similar keywords based on the highest similarity scores and retrieves their associated taxonomies from the keyword_taxonomy_map. 
+It then determines the most common taxonomy among the top neighbors and updates the 'taxonomy' column in the dataframe.
+
+7.By classifying users as HCPs and predicting their specializations, 
+this solution enables targeted advertising campaigns in the healthcare domain. 
+Advertisers and marketers can leverage this information to deliver more relevant and personalized advertisements to the intended audience, 
+resulting in improved engagement and effectiveness of their campaigns.
+
+
+
