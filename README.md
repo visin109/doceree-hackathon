@@ -9,8 +9,7 @@ Highlights of the modelling part:
 3.Taxonomy map for predicting taxonomy that have the same match:
 ![image](https://github.com/visin109/doceree-hackathon/assets/74146605/e19d727b-0a59-443a-a381-384162db3eee)
 
-4.Keyword_taxonomy_map for predicting taxonomy that don’t have exact match but could be
-Predicted by similarity techniques by analyzing similar keywords: 
+4.Keyword_taxonomy_map for predicting taxonomy that don’t have exact match but could be Predicted by similarity techniques by analyzing similar keywords: 
 ![image](https://github.com/visin109/doceree-hackathon/assets/74146605/3bb17dcc-1ea9-4249-9da5-361cce5cb9c0) 
 ![image](https://github.com/visin109/doceree-hackathon/assets/74146605/f8ddc698-b9e8-431e-8387-1c610c412e8d)
 
